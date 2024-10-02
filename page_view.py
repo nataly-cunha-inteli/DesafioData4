@@ -58,7 +58,7 @@ def draw_box_plot():
     df_box = df.copy()
     df_box.reset_index(inplace=True)
     df_box['year'] = df_box['date'].dt.year
-    df_box['month'] = df_box['date'].dt.strftime('%b')  # Get month abbreviation
+    df_box['month'] = df_box['date'].dt.strftime('%b')  # Abreviação de meses
 
     # Draw box plots (using Seaborn)
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(18, 6))
@@ -72,7 +72,7 @@ def draw_box_plot():
     # Month-wise box plot
     sns.boxplot(x='month', y='value', data=df_box, ax=ax2,
                 order=['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 
-                       'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'])  # Correct month order
+                       'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'])  # Ordem dos meses
     ax2.set_title('Month-wise Box Plot (Seasonality)')
     ax2.set_xlabel('Month')
     ax2.set_ylabel('Page Views')
